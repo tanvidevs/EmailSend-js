@@ -9,31 +9,32 @@
 </head>
 <body>
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false();">
-            <h3>Feedback</h3>
+        <form onsubmit="sendEmail(); reset(); return false;" >
+            <h3>GET IN TOUCH</h3>
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="email" id="email" placeholder="Email Id" required>
-            <button type="submit">Send</button>
+            <input type="text" id="phone" placeholder="Phone No" required>
+            <textarea id="message"  rows="4" placeholder="How can we help you"></textarea>
+            <button type="submit">send</button>
         </form>
     </div>
+
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    
     <script>
         function sendEmail(){
-             Email.send({
-              Host : "smtp.gmail.com",
-               Username : "tanvimirase2000@gmail.com",
-              Password : "9665792494",
-             To : 'tanvimirasedeveloper@gmail.com',
-             From : document.getElementById("email").value,
-             Subject : "New Contact form enquary",
-             Body : "Name :" + document.getElementById("name").value
-             + " <br> Email:" + document.getElementById("email").value
-             }).then(
-         message => alert("message sent sucessfully")
-     );
-} 
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "tanvimirasedeveloper@gmail.com",
+    Password : "9665792496",
+    To : 'tanvimirase2000@gmail.com',
+    From : document.getElementById('email').value,
+    Subject : "New Contact Form Enquiry",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+        }
     </script>
 </body>
 </html>
